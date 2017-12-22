@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Firebase Web Quickstart</title>
+    
+    
+</head>
+<body>
+
+<h1 id="fireOne"></h1>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBS4TS5SlEIWLR0NTrG0jCPYA0vTFGmBrE",
+    authDomain: "radm0018firebase.firebaseapp.com",
+    databaseURL: "https://radm0018firebase.firebaseio.com",
+    projectId: "radm0018firebase",
+    storageBucket: "",
+    messagingSenderId: "416772601026"
+  };
+  firebase.initializeApp(config);
+    
+    var fireOne = document.getElementById('fireOne');
+    var dbRef = firebase.database().ref().child('text');
+    dbRef.on('value', snap => fireOne.innerText = snap.val());
+    
+</script>
+</body>
+</html>
